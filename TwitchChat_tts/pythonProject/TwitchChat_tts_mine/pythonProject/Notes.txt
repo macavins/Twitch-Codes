@@ -1,0 +1,21 @@
+We need html, css, js
+Will use python
+Can add banned words
+
+Goals:
+- Make overlay/code for streamers to use TTS in ways they want
+- Free, if want to pay we can use GTTS, azure, Elevenlabs, etc. APIs
+- MAIN GOAL: TTS for chat users to talk to streamer
+- Chat has to hear it too, it'll be funny trust me bro
+- Want to add talking cat
+
+
+
+
+
+Steps:
+- libraries
+- file paths
+- Settings
+- UI Config
+-

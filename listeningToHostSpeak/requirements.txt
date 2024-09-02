@@ -1,0 +1,10 @@
+keyboard
+pydirectinput
+playsound
+Translator
+pyautogui
+SpeechRecognition
+translate
+pynput
+pyaudio
+pygobject

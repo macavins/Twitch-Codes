@@ -1,0 +1,17 @@
+body {
+  background-color: rgba(0, 0, 0, 0);
+  margin: 0px auto;
+  overflow: hidden;
+}
+
+.overlay {
+  display: inline-flex;
+  visibility: hidden;
+  height: 100%;
+  width: 100%;
+}
+
+#message {
+  margin: 0px;
+  padding: 0px 5px;
+}

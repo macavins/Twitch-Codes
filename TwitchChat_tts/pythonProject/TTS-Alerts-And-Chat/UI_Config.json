@@ -1,0 +1,963 @@
+{
+  "output_file": "settings.json",
+  "VoiceName": {
+    "type": "dropdown",
+    "value": "",
+    "items": [],
+    "label": "Voice Name",
+    "tooltip": "Set the voice to use for TTS",
+    "group": "Text-To-Speech Settings"
+  },
+  "Volume": {
+    "type": "slider",
+    "label": "Volume",
+    "value": 80,
+    "min": 0,
+    "max": 100,
+    "ticks": 1,
+    "tooltip": "Set the volume of the TTS",
+    "group": "Text-To-Speech Settings"
+  },
+  "Rate": {
+    "type": "slider",
+    "label": "Speaking Rate",
+    "value": 0,
+    "min": -10,
+    "max": 10,
+    "ticks": 1,
+    "tooltip": "Set the speaking rate of the TTS",
+    "group": "Text-To-Speech Settings"
+  },
+  "MaxCharacters": {
+    "type": "numberbox",
+    "label": "Maximum Characters",
+    "value": 0,
+    "tooltip": "Set the maximum number of characters in a TTS message. Use 0 for no limit.",
+    "group": "Text-To-Speech Settings"
+  },
+  "MaxCharacterMessage": {
+    "type": "textbox",
+    "value": "{user}, your message was too long for text-to-speech.",
+    "label": "Maximum Characters Message",
+    "tooltip": "The message that the bot will read a tts message contains more than the max characters. \r\n {user} = username",
+    "group": "Text-To-Speech Settings"
+  },
+  "TTSCommand": {
+    "type": "textbox",
+    "value": "!tts",
+    "label": "Command Name",
+    "tooltip": "The command used to trigger tts",
+    "group": "TTS Command"
+  },
+  "TTSCommandPermission": {
+    "type": "dropdown",
+    "value": "Caster",
+    "items": [
+      "Everyone",
+      "Regular",
+      "VIP Exclusive",
+      "VIP+",
+      "Subscriber",
+      "GameWisp Subscriber",
+      "User_Specific",
+      "Min_Rank",
+      "Min_Points",
+      "Min_Hours",
+      "Moderator",
+      "Editor",
+      "Caster"
+    ],
+    "label": "Permission level",
+    "tooltip": "Set the permission level for the command",
+    "group": "TTS Command"
+  },
+  "TTSCommandPermissionInfo": {
+    "type": "textbox",
+    "value": "",
+    "label": "Permission level info",
+    "tooltip": "Set the user, rank, or tier for permission",
+    "group": "TTS Command"
+  },
+  "TTSCommandCost": {
+    "type": "numberbox",
+    "label": "Cost (Points)",
+    "value": 500,
+    "tooltip": "The number of points required to use the command",
+    "group": "TTS Command"
+  },
+  "TTSCommandMessage": {
+    "type": "textbox",
+    "value": "{user} says, {message}",
+    "label": "TTS Message Format",
+    "tooltip": "The message that the bot will read when the command is used. \r\n {user} = username\r\n {message} = the chat message",
+    "group": "TTS Command"
+  },
+  "TTSCommandUsage": {
+    "type": "dropdown",
+    "value": "Stream Chat",
+    "items": [
+      "Stream Chat",
+      "Stream Whisper",
+      "Stream Both",
+      "Discord Chat",
+      "Discord Whisper",
+      "Discord Both",
+      "Chat Both",
+      "Whisper Both",
+      "All"
+    ],
+    "label": "Usage",
+    "tooltip": "Usage setting for where the command can be used",
+    "group": "TTS Command Usage"
+  },
+  "TTSCommandUsageReply": {
+    "type": "checkbox",
+    "value": false,
+    "label": "Send Usage Reply",
+    "tooltip": "Enable to display a message when the command is used from an invalid usage.",
+    "group": "TTS Command Usage"
+  },
+  "TTSCommandUsageReplyMessage": {
+    "type": "textbox",
+    "value": "{user} you can only use this command from {usage}!",
+    "label": "Usage Reply Message",
+    "tooltip": "The message that the bot will send when the command is used from an invalid usage. \r\n {user} = username\r\n {usage} = usage of the command",
+    "group": "TTS Command Usage"
+  },
+  "TTSUseCD": {
+    "type": "checkbox",
+    "value": false,
+    "label": "Use Cooldown Message",
+    "tooltip": "Enable to display a message when the TTS command is on cooldown.",
+    "group": "TTS Command Cooldown"
+  },
+  "TTSCasterCD": {
+    "type": "checkbox",
+    "value": true,
+    "label": "Caster ignores cooldown",
+    "tooltip": "Enable/Disable cooldown for caster",
+    "group": "TTS Command Cooldown"
+  },
+  "TTSCooldown": {
+    "type": "numberbox",
+    "label": "Cooldown (seconds)",
+    "value": 0,
+    "tooltip": "Cooldown in seconds.",
+    "group": "TTS Command Cooldown"
+  },
+  "TTSOnCooldown": {
+    "type": "textbox",
+    "value": "{user} the command is still on cooldown for {cooldown} seconds!",
+    "label": "Cooldown Response",
+    "tooltip": "The message that the bot will display when the command is on cooldown. \r\n {user} = username\r\n {cooldown} = time remaining",
+    "group": "TTS Command Cooldown"
+  },
+  "TTSUserCooldown": {
+    "type": "numberbox",
+    "label": "User Cooldown (seconds)",
+    "value": 10,
+    "tooltip": "User cooldown in seconds.",
+    "group": "TTS Command Cooldown"
+  },
+  "TTSOnUserCooldown": {
+    "type": "textbox",
+    "value": "{user} the command is still on user cooldown for {cooldown} seconds!",
+    "label": "User Cooldown Response",
+    "tooltip": "The message that the bot will display when the command is on user cooldown.\r\n {user} = username\r\n {cooldown} = time remaining",
+    "group": "TTS Command Cooldown"
+  },
+  "TTSAllChat": {
+    "type": "checkbox",
+    "value": false,
+    "label": "TTS All Chat Messages",
+    "tooltip": "Enable to use text-to-speech for all messages",
+    "group": "TTS Chat Messages"
+  },
+  "TTSAllChatExcludeCommands": {
+    "type": "checkbox",
+    "value": true,
+    "label": "Exclude Reading Commands",
+    "tooltip": "Exclude reading messages that start with an exclamation point (!).",
+    "group": "TTS Chat Messages"
+  },
+  "TTSAllChatMessage": {
+    "type": "textbox",
+    "value": "{user} says, {message}",
+    "label": "TTS Message Format",
+    "tooltip": "The message that the bot will read for every chat message. \r\n {user} = username\r\n {message} = the chat message",
+    "group": "TTS Chat Messages"
+  },
+  "TTSAllChatUsage": {
+    "type": "dropdown",
+    "value": "Stream Chat",
+    "items": [
+      "Stream Chat",
+      "Stream Whisper",
+      "Stream Both",
+      "Discord Chat",
+      "Discord Whisper",
+      "Discord Both",
+      "Chat Both",
+      "Whisper Both",
+      "All"
+    ],
+    "label": "Usage",
+    "tooltip": "Usage setting for where messages can trigger TTS",
+    "group": "TTS Chat Messages Usage"
+  },
+  "TTSAllChatUsageReply": {
+    "type": "checkbox",
+    "value": false,
+    "label": "Send Usage Reply",
+    "tooltip": "Enable to display a message when TTS is triggered from an invalid usage.",
+    "group": "TTS Chat Messages Usage"
+  },
+  "TTSAllChatUsageReplyMessage": {
+    "type": "textbox",
+    "value": "{user} you can only use this command from {usage}!",
+    "label": "Usage Reply Message",
+    "tooltip": "The message that the bot will send when the TTS is triggered from an invalid usage. \r\n {user} = username\r\n {usage} = usage of the command",
+    "group": "TTS Chat Messages Usage"
+  },
+  "TTSOverlayExcludeAlerts": {
+    "type": "checkbox",
+    "value": true,
+    "label": "Exclude Alerts from Overlay",
+    "tooltip": "Enable to not display alert text-to-speech on the overlay.",
+    "group": "TTS Overlay"
+  },
+  "TTSOverlayMessage": {
+    "type": "textbox",
+    "value": "{user} says, {message}",
+    "label": "Overlay Message Format",
+    "tooltip": "The message that the bot will display on the overlay for tts command and chat messages.\r\nNOTE: This does not apply for alert tts.\r\n {user} = username\r\n {message} = the chat message",
+    "group": "TTS Overlay"
+  },
+  "TTSOverlayTime": {
+    "type": "numberbox",
+    "label": "Seconds to Display",
+    "value": 8,
+    "tooltip": "The number of seconds to display the message",
+    "group": "TTS Overlay"
+  },
+  "TTSOverlayFontColor": {
+    "type": "colorpicker",
+    "label": "Font Color",
+    "value": "rgba(255,255,255,1.0)",
+    "tooltip": "",
+    "group": "TTS Overlay"
+  },
+  "TTSOverlayUseFontOutline": {
+    "type": "checkbox",
+    "value": false,
+    "label": "Use Font Outline",
+    "tooltip": "Enable to use the below font outline color on the overlay.",
+    "group": "TTS Overlay"
+  },
+  "TTSOverlayFontOutline": {
+    "type": "colorpicker",
+    "label": "Font Outline",
+    "value": "rgba(0,0,0,0)",
+    "tooltip": "",
+    "group": "TTS Overlay"
+  },
+  "TTSOverlayUseFontShadow": {
+    "type": "checkbox",
+    "value": true,
+    "label": "Use Font Shadow",
+    "tooltip": "Enable to use the below font shadow color on the overlay.",
+    "group": "TTS Overlay"
+  },
+  "TTSOverlayFontShadow": {
+    "type": "colorpicker",
+    "label": "Font Shadow",
+    "value": "rgba(0,0,0,1.0)",
+    "tooltip": "",
+    "group": "TTS Overlay"
+  },
+  "TTSOverlayFontSize": {
+    "type": "numberbox",
+    "label": "Font Size",
+    "value": 32,
+    "tooltip": "The size of the font in the overlay.",
+    "group": "TTS Overlay"
+  },
+  "TTSOverlayFont": {
+    "type": "textbox",
+    "value": "",
+    "label": "Font Family",
+    "tooltip": "The font family for the text. The font has to be available on your system.",
+    "group": "TTS Overlay"
+  },
+  "TTSOverlayUseBackground": {
+    "type": "checkbox",
+    "value": true,
+    "label": "Use Background Color",
+    "tooltip": "Enable to use the below background color on the overlay.",
+    "group": "TTS Overlay"
+  },
+  "TTSOverlayBackgroundColor": {
+    "type": "colorpicker",
+    "label": "Background Color",
+    "value": "rgba(0,0,0,1.0)",
+    "tooltip": "",
+    "group": "TTS Overlay"
+  },
+  "TTSOverlayUseBorder": {
+    "type": "checkbox",
+    "value": true,
+    "label": "Use Border Color",
+    "tooltip": "Enable to use the below border color on the overlay.",
+    "group": "TTS Overlay"
+  },
+  "TTSOverlayBorderColor": {
+    "type": "colorpicker",
+    "label": "Border Color",
+    "value": "rgba(255,255,255,1.0)",
+    "tooltip": "",
+    "group": "TTS Overlay"
+  },
+  "TTSOverlayHorizontalAlign": {
+    "type": "dropdown",
+    "value": "center",
+    "items": [
+      "left",
+      "center",
+      "right"
+    ],
+    "label": "Horizontal Align",
+    "tooltip": "Select where (horizontally) the overlay appears in the browser source.",
+    "group": "TTS Overlay"
+  },
+  "TTSOverlayVerticalAlign": {
+    "type": "dropdown",
+    "value": "center",
+    "items": [
+      "top",
+      "center",
+      "bottom"
+    ],
+    "label": "Vertical Align",
+    "tooltip": "Select where (vertically) the overlay appears in the browser source.",
+    "group": "TTS Overlay"
+  },
+  "TTSOverlayAnimateIn": {
+    "type": "dropdown",
+    "value": "fadeIn",
+    "items": [
+      "bounceIn",
+      "bounceInDown",
+      "bounceInLeft",
+      "bounceInRight",
+      "bounceInUp",
+      "fadeIn",
+      "fadeInDown",
+      "fadeInDownBig",
+      "fadeInLeft",
+      "fadeInLeftBig",
+      "fadeInRight",
+      "fadeInRightBig",
+      "fadeInUp",
+      "fadeInUpBig",
+      "flipInX",
+      "flipInY",
+      "lightSpeedIn",
+      "rotateIn",
+      "rotateInDownLeft",
+      "rotateInDownRight",
+      "rotateInUpLeft",
+      "rotateInUpRight",
+      "slideInUp",
+      "slideInDown",
+      "slideInLeft",
+      "slideInRight",
+      "zoomIn",
+      "zoomInDown",
+      "zoomInLeft",
+      "zoomInRight",
+      "zoomInUp"
+    ],
+    "label": "Animate In",
+    "tooltip": "Select the animation to apply when the text appears",
+    "group": "TTS Overlay"
+  },
+  "TTSOverlayAnimateOut": {
+    "type": "dropdown",
+    "value": "fadeOut",
+    "items": [
+      "bounceOut",
+      "bounceOutDown",
+      "bounceOutLeft",
+      "bounceOutRight",
+      "bounceOutUp",
+      "fadeOut",
+      "fadeOutDown",
+      "fadeOutDownBig",
+      "fadeOutLeft",
+      "fadeOutLeftBig",
+      "fadeOutRight",
+      "fadeOutRightBig",
+      "fadeOutUp",
+      "fadeOutUpBig",
+      "flipOutX",
+      "flipOutY",
+      "lightSpeedOut",
+      "rotateOut",
+      "rotateOutDownLeft",
+      "rotateOutDownRight",
+      "rotateOutUpLeft",
+      "rotateOutUpRight",
+      "slideOutUp",
+      "slideOutDown",
+      "slideOutLeft",
+      "slideOutRight",
+      "zoomOut",
+      "zoomOutDown",
+      "zoomOutLeft",
+      "zoomOutRight",
+      "zoomOutUp"
+    ],
+    "label": "Animate Out",
+    "tooltip": "Select the animation to apply when the text disappears",
+    "group": "TTS Overlay"
+  },
+  "OpenAnimateDemo": {
+    "type": "button",
+    "label": "Open Animation Demo",
+    "tooltip": "Opens the demo website for the animations",
+    "function": "OpenAnimateDemo",
+    "wsevent": "",
+    "group": "TTS Overlay"
+  },
+  "OpenOverlayFolder": {
+    "type": "button",
+    "label": "Open Overlay Folder",
+    "tooltip": "Opens the overlay folder for this script",
+    "function": "OpenOverlayFolder",
+    "wsevent": "",
+    "group": "TTS Overlay"
+  },
+  "MixerOnFollow": {
+    "type": "checkbox",
+    "value": false,
+    "label": "Enabled",
+    "tooltip": "Check this to enable TTS for follow alerts",
+    "group": "Mixer Follows"
+  },
+  "MixerFollowDelay": {
+    "type": "numberbox",
+    "label": "Delay (seconds)",
+    "value": 0,
+    "tooltip": "Number of seconds to delay reading the alert",
+    "group": "Mixer Follows"
+  },
+  "MixerFollowMessage": {
+    "type": "textbox",
+    "label": "Follow Alert Message",
+    "value": "{name} has followed.",
+    "tooltip": "The alert format.\r\n{name} = Follower Username",
+    "group": "Mixer Follows"
+  },
+  "MixerOnHost": {
+    "type": "checkbox",
+    "value": false,
+    "label": "Enabled",
+    "tooltip": "Check this to enable TTS for host alerts",
+    "group": "Mixer Hosts"
+  },
+  "MixerHostMinimum": {
+    "type": "numberbox",
+    "label": "Minimum Viewers for TTS",
+    "value": 0,
+    "tooltip": "Minimum viewers to read the alert",
+    "group": "Mixer Hosts"
+  },
+  "MixerHostDelay": {
+    "type": "numberbox",
+    "label": "Delay (seconds)",
+    "value": 0,
+    "tooltip": "Number of seconds to delay reading the alert",
+    "group": "Mixer Hosts"
+  },
+  "MixerHostMessage": {
+    "type": "textbox",
+    "label": "Host Alert Message",
+    "value": "{name} has hosted you with {amount} viewer{isPlural}.",
+    "tooltip": "The alert format.\r\n{name} = Host Username\r\n{amount} = Number of viewers\r\n{isPlural} = Adds an 's' if amount > 1",
+    "group": "Mixer Hosts"
+  },
+  "MixerOnSub": {
+    "type": "checkbox",
+    "value": false,
+    "label": "Enabled",
+    "tooltip": "Check this to enable TTS for subscriber alerts",
+    "group": "Mixer Subscribers"
+  },
+  "MixerIncludeSubMessage": {
+    "type": "checkbox",
+    "value": true,
+    "label": "Include Message",
+    "tooltip": "Check this to enable TTS for subscriber messages included with alerts",
+    "group": "Mixer Subscribers"
+  },
+  "MixerSubDelay": {
+    "type": "numberbox",
+    "label": "Delay (seconds)",
+    "value": 0,
+    "tooltip": "Number of seconds to delay reading the alert",
+    "group": "Mixer Subscribers"
+  },
+  "MixerSubMessage": {
+    "type": "textbox",
+    "label": "Sub (1 month) Alert Message",
+    "value": "{name} has subscribed ({tier}).",
+    "tooltip": "The alert format.\r\n{name} = Sub Username\r\n{tier} = Subscription tier (Prime, Tier 1, 2, 3)",
+    "group": "Mixer Subscribers"
+  },
+  "MixerResubMessage": {
+    "type": "textbox",
+    "label": "Resubscriber Alert Message",
+    "value": "{name} has resubscribed ({tier}) for {months} months.",
+    "tooltip": "The alert format.\r\n{name} = Sub Username\r\n{tier} = Subscription tier (Prime, Tier 1, 2, 3)\r\n{months} = Number of months subscribed",
+    "group": "Mixer Subscribers"
+  },
+  "StreamlabsOnDonation": {
+    "type": "checkbox",
+    "value": false,
+    "label": "Enabled",
+    "tooltip": "Check this to enable TTS for donation alerts",
+    "group": "Streamlabs Donations"
+  },
+  "StreamlabsIncludeDonationMessage": {
+    "type": "checkbox",
+    "value": true,
+    "label": "Include Message",
+    "tooltip": "Check this to enable TTS for donation messages included with alerts",
+    "group": "Streamlabs Donations"
+  },
+  "StreamlabsDonationMinimum": {
+    "type": "numberbox",
+    "label": "Minimum Donation for TTS",
+    "value": 5,
+    "tooltip": "Minimum amount to read the alert",
+    "group": "Streamlabs Donations"
+  },
+  "StreamlabsDonationDelay": {
+    "type": "numberbox",
+    "label": "Delay (seconds)",
+    "value": 0,
+    "tooltip": "Number of seconds to delay reading the alert",
+    "group": "Streamlabs Donations"
+  },
+  "StreamlabsDonationMessage": {
+    "type": "textbox",
+    "label": "Donation Alert Message",
+    "value": "{name} donated {amount}.",
+    "tooltip": "The alert format.\r\n{name} = Donator Username\r\n{amount} = Amount of money donated",
+    "group": "Streamlabs Donations"
+  },
+  "TwitchOnCheer": {
+    "type": "checkbox",
+    "value": false,
+    "label": "Enabled",
+    "tooltip": "Check this to enable TTS for cheer alerts",
+    "group": "Twitch Bits"
+  },
+  "TwitchIncludeCheerMessage": {
+    "type": "checkbox",
+    "value": true,
+    "label": "Include Message",
+    "tooltip": "Check this to enable TTS for messages included with bit alerts",
+    "group": "Twitch Bits"
+  },
+  "TwitchCheerMinimum": {
+    "type": "numberbox",
+    "label": "Minimum Bits for TTS",
+    "value": 100,
+    "tooltip": "Minimum bits to read the alert",
+    "group": "Twitch Bits"
+  },
+  "TwitchCheerDelay": {
+    "type": "numberbox",
+    "label": "Delay (seconds)",
+    "value": 0,
+    "tooltip": "Number of seconds to delay reading the alert",
+    "group": "Twitch Bits"
+  },
+  "TwitchCheerMessage": {
+    "type": "textbox",
+    "label": "Bits Alert Message",
+    "value": "{name} has used {amount} bit{isPlural}.",
+    "tooltip": "The alert format.\r\n{name} = Cheerer Username\r\n{amount} = Number of bits\r\n{isPlural} = Adds an 's' if amount > 1",
+    "group": "Twitch Bits"
+  },
+  "TwitchOnFollow": {
+    "type": "checkbox",
+    "value": false,
+    "label": "Enabled",
+    "tooltip": "Check this to enable TTS for follow alerts",
+    "group": "Twitch Follows"
+  },
+  "TwitchFollowDelay": {
+    "type": "numberbox",
+    "label": "Delay (seconds)",
+    "value": 0,
+    "tooltip": "Number of seconds to delay reading the alert",
+    "group": "Twitch Follows"
+  },
+  "TwitchFollowMessage": {
+    "type": "textbox",
+    "label": "Follow Alert Message",
+    "value": "{name} has followed.",
+    "tooltip": "The alert format.\r\n{name} = Follower Username",
+    "group": "Twitch Follows"
+  },
+  "TwitchOnHost": {
+    "type": "checkbox",
+    "value": false,
+    "label": "Enabled",
+    "tooltip": "Check this to enable TTS for host alerts",
+    "group": "Twitch Hosts"
+  },
+  "TwitchHostMinimum": {
+    "type": "numberbox",
+    "label": "Minimum Viewers for TTS",
+    "value": 0,
+    "tooltip": "Minimum viewers to read the alert",
+    "group": "Twitch Hosts"
+  },
+  "TwitchHostDelay": {
+    "type": "numberbox",
+    "label": "Delay (seconds)",
+    "value": 0,
+    "tooltip": "Number of seconds to delay reading the alert",
+    "group": "Twitch Hosts"
+  },
+  "TwitchHostMessage": {
+    "type": "textbox",
+    "label": "Host Alert Message",
+    "value": "{name} has hosted you with {amount} viewer{isPlural}.",
+    "tooltip": "The alert format.\r\n{name} = Host Username\r\n{amount} = Number of viewers\r\n{isPlural} = Adds an 's' if amount > 1",
+    "group": "Twitch Hosts"
+  },
+  "TwitchOnRaid": {
+    "type": "checkbox",
+    "value": false,
+    "label": "Enabled",
+    "tooltip": "Check this to enable TTS for raid alerts",
+    "group": "Twitch Raids"
+  },
+  "TwitchRaidMinimum": {
+    "type": "numberbox",
+    "label": "Minimum Raiders for TTS",
+    "value": 0,
+    "tooltip": "Minimum raiders to read the alert",
+    "group": "Twitch Raids"
+  },
+  "TwitchRaidDelay": {
+    "type": "numberbox",
+    "label": "Delay (seconds)",
+    "value": 0,
+    "tooltip": "Number of seconds to delay reading the alert",
+    "group": "Twitch Raids"
+  },
+  "TwitchRaidMessage": {
+    "type": "textbox",
+    "label": "Raid Alert Message",
+    "value": "{name} has raided you with a party of {amount}.",
+    "tooltip": "The alert format.\r\n{name} = Raider Username\r\n{amount} = Number of raiders",
+    "group": "Twitch Raids"
+  },
+  "TwitchOnSub": {
+    "type": "checkbox",
+    "value": false,
+    "label": "Enabled",
+    "tooltip": "Check this to enable TTS for subscriber alerts",
+    "group": "Twitch Subscribers"
+  },
+  "TwitchIncludeSubMessage": {
+    "type": "checkbox",
+    "value": true,
+    "label": "Include Message",
+    "tooltip": "Check this to enable TTS for subscriber messages included with alerts",
+    "group": "Twitch Subscribers"
+  },
+  "TwitchSubDelay": {
+    "type": "numberbox",
+    "label": "Delay (seconds)",
+    "value": 0,
+    "tooltip": "Number of seconds to delay reading the alert",
+    "group": "Twitch Subscribers"
+  },
+  "TwitchSubMessage": {
+    "type": "textbox",
+    "label": "Sub (1 month) Alert Message",
+    "value": "{name} has subscribed ({tier}).",
+    "tooltip": "The alert format.\r\n{name} = Sub Username\r\n{tier} = Subscription tier (Prime, Tier 1, 2, 3)",
+    "group": "Twitch Subscribers"
+  },
+  "TwitchResubMessage": {
+    "type": "textbox",
+    "label": "Resubscriber Alert Message",
+    "value": "{name} has resubscribed ({tier}) for {months} months.",
+    "tooltip": "The alert format.\r\n{name} = Sub Username\r\n{tier} = Subscription tier (Prime, Tier 1, 2, 3)\r\n{months} = Number of months subscribed",
+    "group": "Twitch Subscribers"
+  },
+  "TwitchGiftMessage": {
+    "type": "textbox",
+    "label": "Gift Sub Alert Message",
+    "value": "{gifter} has gifted a sub ({tier}) to {name} ({months} month{isPlural}).",
+    "tooltip": "The alert format.\r\n{gifter} = Gifter's Username\r\n{name} = Sub Username\r\n{tier} = Subscription tier (Prime, Tier 1, 2, 3)\r\n{months} = Number of months subscribed\r\n{isPlural} = Adds an 's' if months > 1",
+    "group": "Twitch Subscribers"
+  },
+  "TwitchGiftMassMessage": {
+    "type": "textbox",
+    "label": "Gift Multiple Subs Alert Message",
+    "value": "{gifter} has gifted {amount} subs to the channel: {recipients}.",
+    "tooltip": "The alert format when someone gifts more than 1 sub.\r\n{gifter} = Gifter's Username\r\n{amount} = Number of Subs\r\n{recipients} = A comma-delimited list of users that received the gifted subs",
+    "group": "Twitch Subscribers"
+  },
+  "YoutubeOnFollow": {
+    "type": "checkbox",
+    "value": false,
+    "label": "Enabled",
+    "tooltip": "Check this to enable TTS for follow alerts",
+    "group": "Youtube Follows (Subscriptions)"
+  },
+  "YoutubeFollowDelay": {
+    "type": "numberbox",
+    "label": "Delay (seconds)",
+    "value": 0,
+    "tooltip": "Number of seconds to delay reading the alert",
+    "group": "Youtube Follows (Subscriptions)"
+  },
+  "YoutubeFollowMessage": {
+    "type": "textbox",
+    "label": "Follow (subscriber) Alert Message",
+    "value": "{name} has followed.",
+    "tooltip": "The alert format.\r\n{name} = Follower Username",
+    "group": "Youtube Follows (Subscriptions)"
+  },
+  "YoutubeOnSub": {
+    "type": "checkbox",
+    "value": false,
+    "label": "Enabled",
+    "tooltip": "Check this to enable TTS for subscriber alerts",
+    "group": "Youtube Subscribers (Sponsors)"
+  },
+  "YoutubeIncludeSubMessage": {
+    "type": "checkbox",
+    "value": true,
+    "label": "Include Message",
+    "tooltip": "Check this to enable TTS for subscriber messages included with alerts",
+    "group": "Youtube Subscribers (Sponsors)"
+  },
+  "YoutubeSubDelay": {
+    "type": "numberbox",
+    "label": "Delay (seconds)",
+    "value": 0,
+    "tooltip": "Number of seconds to delay reading the alert",
+    "group": "Youtube Subscribers (Sponsors)"
+  },
+  "YoutubeSubMessage": {
+    "type": "textbox",
+    "label": "Subscriber (Sponsor) 1 month Alert Message",
+    "value": "{name} has subscribed ({tier}).",
+    "tooltip": "The alert format.\r\n{name} = Sub Username\r\n{tier} = Subscription tier (Prime, Tier 1, 2, 3)",
+    "group": "Youtube Subscribers (Sponsors)"
+  },
+  "YoutubeResubMessage": {
+    "type": "textbox",
+    "label": "Resubscriber Alert Message",
+    "value": "{name} has resubscribed ({tier}) for {months} months.",
+    "tooltip": "The alert format.\r\n{name} = Sub Username\r\n{tier} = Subscription tier (Prime, Tier 1, 2, 3)\r\n{months} = Number of months subscribed",
+    "group": "Youtube Subscribers (Sponsors)"
+  },
+  "YoutubeOnSuperchat": {
+    "type": "checkbox",
+    "value": false,
+    "label": "Enabled",
+    "tooltip": "Check this to enable TTS for superchat alerts",
+    "group": "Youtube Superchat"
+  },
+  "YoutubeIncludeSuperchatMessage": {
+    "type": "checkbox",
+    "value": true,
+    "label": "Include Message",
+    "tooltip": "Check this to enable TTS for donation messages included with alerts",
+    "group": "Youtube Superchat"
+  },
+  "YoutubeSuperchatMinimum": {
+    "type": "numberbox",
+    "label": "Minimum Superchat amount for TTS",
+    "value": 5,
+    "tooltip": "Minimum amount to read the alert",
+    "group": "Youtube Superchat"
+  },
+  "YoutubeSuperchatDelay": {
+    "type": "numberbox",
+    "label": "Delay (seconds)",
+    "value": 0,
+    "tooltip": "Number of seconds to delay reading the alert",
+    "group": "Youtube Superchat"
+  },
+  "YoutubeSuperchatMessage": {
+    "type": "textbox",
+    "label": "Donation Alert Message",
+    "value": "{name} donated {amount}.",
+    "tooltip": "The alert format.\r\n{name} = Donator Username\r\n{amount} = Amount of money donated",
+    "group": "Youtube Superchat"
+  },
+  "BanUserCommand": {
+    "type": "textbox",
+    "value": "!banuser",
+    "label": "Command Name",
+    "tooltip": "The command used to ban or unban users from triggering TTS.\r\nBans if the user is not already in the file\r\nUnbans if the user is already banned.",
+    "group": "Banned Users"
+  },
+  "BanUserCommandPermission": {
+    "type": "dropdown",
+    "value": "Caster",
+    "items": [
+      "Everyone",
+      "Regular",
+      "VIP Exclusive",
+      "VIP+",
+      "Subscriber",
+      "GameWisp Subscriber",
+      "User_Specific",
+      "Min_Rank",
+      "Min_Points",
+      "Min_Hours",
+      "Moderator",
+      "Editor",
+      "Caster"
+    ],
+    "label": "Permission level",
+    "tooltip": "Set the permission level for the command",
+    "group": "Banned Users"
+  },
+  "BanUserCommandPermissionInfo": {
+    "type": "textbox",
+    "value": "",
+    "label": "Permission level info",
+    "tooltip": "Set the user, rank, or tier for permission",
+    "group": "Banned Users"
+  },
+  "OpenBannedUserFile": {
+    "type": "button",
+    "label": "Open users.txt",
+    "tooltip": "Opens the text file of banned users",
+    "function": "OpenBannedUserFile",
+    "wsevent": "",
+    "group": "Banned Users"
+  },
+  "BanWordCommand": {
+    "type": "textbox",
+    "value": "!banword",
+    "label": "Command Name",
+    "tooltip": "The command used to ban or unban words in TTS.\r\nBans if the word is not already in the file\r\nUnbans if the word is already banned.",
+    "group": "Banned Words"
+  },
+  "BanWordCommandPermission": {
+    "type": "dropdown",
+    "value": "Caster",
+    "items": [
+      "Everyone",
+      "Regular",
+      "VIP Exclusive",
+      "VIP+",
+      "Subscriber",
+      "GameWisp Subscriber",
+      "User_Specific",
+      "Min_Rank",
+      "Min_Points",
+      "Min_Hours",
+      "Moderator",
+      "Editor",
+      "Caster"
+    ],
+    "label": "Permission level",
+    "tooltip": "Set the permission level for the command",
+    "group": "Banned Words"
+  },
+  "BanWordCommandPermissionInfo": {
+    "type": "textbox",
+    "value": "",
+    "label": "Permission level info",
+    "tooltip": "Set the user, rank, or tier for permission",
+    "group": "Banned Words"
+  },
+  "BannedAction": {
+    "type": "dropdown",
+    "value": "Skip Messages with Banned Words",
+    "items": [
+      "Skip Messages with Banned Words",
+      "Replace Banned Words"
+    ],
+    "label": "Banned Words Setting",
+    "tooltip": "Customize how banned words are handled.",
+    "group": "Banned Words"
+  },
+  "BannedMatchWholeWord": {
+    "type": "checkbox",
+    "value": true,
+    "label": "Match Whole Words Only",
+    "tooltip": "Check this to only look for banned words rather than partial words.\r\nFor example, if 'fu' is a banned word and the message contains 'fudge'\r\n When Checked: The message is NOT flagged as containing a banned word\r\n When Not Checked: The message is flagged as containing a bad word",
+    "group": "Banned Words"
+  },
+  "BannedReplacement": {
+    "type": "textbox",
+    "label": "Banned Word Replacement",
+    "value": "",
+    "tooltip": "The text used to replace banned words.",
+    "group": "Banned Words"
+  },
+  "OpenBannedWordFile": {
+    "type": "button",
+    "label": "Open banned.txt",
+    "tooltip": "Opens the text file of banned words",
+    "function": "OpenBannedWordFile",
+    "wsevent": "",
+    "group": "Banned Words"
+  },
+  "SocketToken": {
+    "type": "textbox",
+    "label": "Streamlabs Socket Token",
+    "value": "",
+    "tooltip": "The Streamlabs Socket Token.\r\nThis can be found on the streamlabs website via the left-hand side menu -> API Settings -> API Tokens.",
+    "group": "Streamlabs Token"
+  },
+  "OpenSocketToken": {
+    "type": "button",
+    "label": "Open Streamlabs API Settings",
+    "tooltip": "Opens the API Settings for Streamlabs",
+    "function": "OpenSocketToken",
+    "wsevent": "",
+    "group": "Streamlabs Token"
+  },
+  "OpenGithubRepository": {
+    "type": "button",
+    "label": "GitHub Repository",
+    "tooltip": "Opens the Github Repository",
+    "function": "OpenGithubRepository",
+    "wsevent": "",
+    "group": "Author"
+  },
+  "OpenTwitter": {
+    "type": "button",
+    "label": "Kruiser8 Twitter",
+    "tooltip": "Opens the Twitter for the author",
+    "function": "OpenTwitter",
+    "wsevent": "",
+    "group": "Author"
+  },
+  "OpenReadMe": {
+    "type": "button",
+    "label": "Open README.txt",
+    "tooltip": "Opens the README.txt for this script",
+    "function": "OpenReadMe",
+    "wsevent": "",
+    "group": "ReadMe"
+  }
+}

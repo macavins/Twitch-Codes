@@ -1,0 +1,42 @@
+{
+    "output_file": "settings.json",
+    "Command": {
+      "type": "textbox",
+      "value": "!dog",
+      "label": "command",
+      "tooltip": "Command to become dog",
+      "group": "Core"
+    },
+    "animalCommand": {
+      "type": "textbox",
+      "value": "!animal",
+      "label": "animal command",
+      "tooltip": "Command to become animal",
+      "group": "Core"
+    },
+    "Permission": {
+      "type": "dropdown",
+      "value": "everyone",
+      "items": ["everyone","moderator","subscriber","user_specific","editor"],
+      "label": "Permission",
+      "tooltip": "Who is able to use the command",
+      "group": "Core"
+    },
+    "Info": {
+        "type": "textbox",
+        "value": "Hit Save Settings to reset chats breed of dog or animal",
+        "label": "Info",
+        "tooltip": "issa dog.",
+        "group": "Core"
+      },
+    "Cooldown": {
+      "type": "slider",
+      "value": 4,
+      "min": 1,
+      "max": 100,
+      "ticks": 1,
+      "label": "Cooldown (seconds)",
+      "tooltip": "How long the command should go on cooldown for",
+      "group": "Core"
+    }
+  }

@@ -1,0 +1,8 @@
+openai
+pathlib
+sounddevice
+soundfile
+numpy
+pyyaml
+gtts
+google.generativeai

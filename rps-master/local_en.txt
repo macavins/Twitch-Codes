@@ -1,0 +1,23 @@
+# Choice
+Rock
+Paper
+Scissors
+Lizard
+Spock
+
+# Actions
+cuts
+covers
+crushes
+crushes
+poisons
+smashes
+decapitates
+eats
+disproves
+vaporizes
+
+# Messages
+{phrase}. {user} wins!!!
+{phrase}. {user} loose :(
+{user} and bot choose {user_pick}. Tie! No ones win.

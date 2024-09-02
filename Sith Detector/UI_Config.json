@@ -1,0 +1,57 @@
+{
+    "output_file": "Settings/settings.json",
+    "SithMessage": {
+      "type": "textbox",
+      "value": "Dark side huh?",
+      "label": "Sith detected",
+      "tooltip": "Response given if Sith",
+      "group": "Core"
+    },
+    "JediMessage": {
+      "type": "textbox",
+      "value": "light side?",
+      "label": "Jedi found message",
+      "tooltip": "Response given if jedi",
+      "group": "Core"
+    },
+    "SithOdds": {
+      "type": "slider",
+      "value": 10,
+      "min": 1,
+      "max": 100,
+      "ticks": 5,
+      "label": "Sith Odds",
+      "tooltip": "Odds of a person being found as a Sith",
+      "group": "Core"
+    },
+    "Command": {
+      "type": "textbox",
+      "value": "!detect",
+      "label": "Command",
+      "tooltip": "Response given if jedi",
+      "group": "Core"
+    },
+    "Permission": {
+      "type": "dropdown",
+      "value": "everyone",
+      "items": ["everyone","moderator","subscriber","user_specific","editor"],
+      "label": "Permission",
+      "tooltip": "Who is able to use the command",
+      "group": "Core"
+    },
+    "Info": {
+        "type": "textbox",
+        "value": "",
+        "label": "Info",
+        "tooltip": "This field should only be filled when using the user_specific permission.",
+        "group": "Core"
+      },
+
+    "Response": {
+        "type": "textbox",
+        "value": "Pong!",
+        "label": "Command",
+        "tooltip": "The message that will be sent to chat when using the command.",
+        "group": "Core"
+      }
+  }
